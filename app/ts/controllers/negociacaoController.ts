@@ -1,7 +1,7 @@
 class NegociacaoController {
-    private _inputData: Element;
-    private _inputQuantidade: Element;
-    private _inputValor: Element;
+    private _inputData: HTMLInputElement;
+    private _inputQuantidade: HTMLInputElement;
+    private _inputValor: HTMLInputElement;
 
     constructor() {
         this._inputData = document.querySelector("#data");
@@ -12,9 +12,9 @@ class NegociacaoController {
     adiciona(event: Event) {
         event.preventDefault();
         const negociacao = new Negociacao(
-            this._inputData,
-            this._inputQuantidade,
-            this._inputValor
+            this._inputData.value,
+            this._inputQuantidade.value,
+            this._inputValor.value
         );
         console.log(negociacao);
     }
