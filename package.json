@@ -1,0 +1,23 @@
+{
+  "name": "curso_alura_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francopan/curso_alura_typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francopan/curso_alura_typescript/issues"
+  },
+  "homepage": "https://github.com/francopan/curso_alura_typescript#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
