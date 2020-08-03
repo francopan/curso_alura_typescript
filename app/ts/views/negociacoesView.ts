@@ -1,9 +1,9 @@
 
-class NegociacoesView extends View {
+class NegociacoesView extends View<Negociacoes> {
 
-    update(model: Negociacoes): void {
-        this._elemento.innerHTML = this.template(model);
-    }
+    // update(model: Negociacoes): void {
+    //     this._elemento.innerHTML = this.template(model);
+    // }
 
     template(model: Negociacoes): string {
         return `
