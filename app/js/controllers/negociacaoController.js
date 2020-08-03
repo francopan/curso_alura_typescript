@@ -4,6 +4,8 @@ class NegociacaoController {
         this._inputQuantidade = document.querySelector("#quantidade");
         this._inputValor = document.querySelector("#valor");
         this._negociacoes = new Negociacoes();
+        this._negociacoesView = new NegociacoesView("#negociacoesView");
+        this._negociacoesView.update();
     }
     adiciona(event) {
         event.preventDefault();
