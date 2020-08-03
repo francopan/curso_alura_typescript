@@ -12,7 +12,7 @@ class NegociacaoController {
         this._negociacoes = new Negociacoes();
         this._negociacoesView = new NegociacoesView("#negociacoesView");
 
-        this._negociacoesView.update();
+        this._negociacoesView.update(this._negociacoes);
     }
 
     adiciona(event: Event) {
@@ -23,8 +23,6 @@ class NegociacaoController {
             parseFloat(this._inputValor.value)
         );
         this._negociacoes.adiciona(negociacao);
-        this._negociacoes.paraArray().forEach(n => {
-            console.log(n.data, n.quantidade, n.valor)
-        })
+        this._negociacoesView.update(this._negociacoes);
     }
 }
