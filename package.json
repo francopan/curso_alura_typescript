@@ -20,6 +20,7 @@
   "homepage": "https://github.com/francopan/curso_alura_typescript#readme",
   "devDependencies": {
     "@types/jquery": "^2.0.42",
+    "lite-server": "^2.5.4",
     "typescript": "^3.9.7"
   }
 }
