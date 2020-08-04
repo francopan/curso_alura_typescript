@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -w",
+    "start": "concurrently \"npm run watch\" \"npm run server\"",
+    "watch": "tsc -w",
     "compile": "tsc",
+    "server": "lite-server --baseDir=app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +22,7 @@
   "homepage": "https://github.com/francopan/curso_alura_typescript#readme",
   "devDependencies": {
     "@types/jquery": "^2.0.42",
+    "concurrently": "^5.2.0",
     "lite-server": "^2.5.4",
     "typescript": "^3.9.7"
   }
