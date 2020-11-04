@@ -7,7 +7,7 @@ System.register([], function (exports_1, context_1) {
         execute: function () {
             Negociacoes = class Negociacoes {
                 constructor() {
-                    this._negociacoes = [];
+                    this._negociacoes = new Array();
                 }
                 adiciona(negociacao) {
                     this._negociacoes.push(negociacao);
