@@ -1,7 +1,10 @@
 
-import { domInject } from '../helpers/decorators/index';
+import { domInject, throttle } from '../helpers/decorators/index';
 import { Negociacoes, Negociacao } from '../models/index';
+import { NegociacaoService } from '../services/index';
 import { NegociacoesView, MensagemView } from '../views/index';
+
+
 
 export class NegociacaoController {
     @domInject("#data")
@@ -13,6 +16,7 @@ export class NegociacaoController {
     private _negociacoes: Negociacoes;
     private _negociacoesView: NegociacoesView;
     private _mensagmView: MensagemView;
+    private _negociacaoService = new NegociacaoService();
 
     constructor() {
         this._negociacoes = new Negociacoes();
@@ -46,8 +50,12 @@ export class NegociacaoController {
         return date.getDay() !== DiaDaSemana.Domingo && date.getDay() !== DiaDaSemana.Sabado;
     }
 
+    @throttle(500)
     importaDados():void {
-        alert("Teste");
+        this._negociacaoService.obterNegociacoes().then(n => {
+            n.forEach(negociacao => this._negociacoes.adiciona(negociacao));
+            this._negociacoesView.update(this._negociacoes);
+        })     
     }
 
 }
