@@ -1,18 +1,19 @@
+import { domInject } from '../helpers/decorators/domInjector';
 import { Negociacoes, Negociacao } from '../models/index';
 import { NegociacoesView, MensagemView } from '../views/index';
 
 export class NegociacaoController {
+    @domInject("#data")
     private _inputData: JQuery;
+    @domInject("#quantidade")
     private _inputQuantidade: JQuery;
+    @domInject("#valor")
     private _inputValor: JQuery;
     private _negociacoes: Negociacoes;
     private _negociacoesView: NegociacoesView;
     private _mensagmView: MensagemView;
 
     constructor() {
-        this._inputData = $("#data");
-        this._inputQuantidade = $("#quantidade");
-        this._inputValor = $("#valor");
         this._negociacoes = new Negociacoes();
         this._negociacoesView = new NegociacoesView("#negociacoesView");
         this._mensagmView = new MensagemView("#mensagemView");

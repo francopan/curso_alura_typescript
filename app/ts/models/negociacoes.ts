@@ -5,7 +5,6 @@ export class Negociacoes {
 
     private _negociacoes:Array<Negociacao> = new Array<Negociacao>();
 
-    @logarTempoExecucao()
     adiciona(negociacao: Negociacao): void {
         this._negociacoes.push(negociacao);
     }
