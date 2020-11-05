@@ -1,4 +1,3 @@
-import { logarTempoExecucao } from '../helpers/index';
 import { Negociacao } from './negociacao';
 
 export class Negociacoes {

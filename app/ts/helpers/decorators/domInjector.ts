@@ -1,10 +1,10 @@
 export function domInject(selector: string) {
     return function(target: any, key: string) {
-        let elemento = jQuery;
+        let elemento: JQuery;
 
         const getter = function() {
             if (!elemento) {
-                this.elemento = $(selector);
+                elemento = $(selector);
             }
             return elemento;
         };

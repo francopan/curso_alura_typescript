@@ -1,4 +1,5 @@
-import { logarTempoExecucao } from "../helpers/index";
+import { logarTempoExecucao } from "../helpers/decorators/index";
+
 
 
 export abstract class View<T> {

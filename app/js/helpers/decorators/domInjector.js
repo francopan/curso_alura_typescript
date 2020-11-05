@@ -3,10 +3,10 @@ System.register([], function (exports_1, context_1) {
     var __moduleName = context_1 && context_1.id;
     function domInject(selector) {
         return function (target, key) {
-            let elemento = jQuery;
+            let elemento;
             const getter = function () {
                 if (!elemento) {
-                    this.elemento = $(selector);
+                    elemento = $(selector);
                 }
                 return elemento;
             };

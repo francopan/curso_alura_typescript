@@ -1,1 +1,2 @@
-export * from './decorators/logarTempoExecucao';
+export * from './logarTempoExecucao';
+export * from './domInjector';

@@ -1,4 +1,5 @@
-import { domInject } from '../helpers/decorators/domInjector';
+
+import { domInject } from '../helpers/decorators/index';
 import { Negociacoes, Negociacao } from '../models/index';
 import { NegociacoesView, MensagemView } from '../views/index';
 
@@ -22,7 +23,7 @@ export class NegociacaoController {
 
     adiciona(event: Event): void {
         event.preventDefault();
-
+        
         const date = new Date(this._inputData.val().replace(/-/g, ','));
 
         if (!this._ehDiaUtil(date)) {
@@ -43,6 +44,10 @@ export class NegociacaoController {
 
     private _ehDiaUtil(date: Date): boolean {
         return date.getDay() !== DiaDaSemana.Domingo && date.getDay() !== DiaDaSemana.Sabado;
+    }
+
+    importaDados():void {
+        alert("Teste");
     }
 
 }
