@@ -54,13 +54,14 @@ export class NegociacaoController {
     }
 
     @throttle(500)
-    importaDados():void {
-        this._negociacaoService.obterNegociacoes().then(n => {
-            n.forEach(negociacao => this._negociacoes.adiciona(negociacao));
-            this._negociacoesView.update(this._negociacoes);
-        })     
-    }
-
+    async importaDados(): Promise<void> {
+        const paraImportar = await this._negociacaoService.obterNegociacoes();
+        paraImportar.filter(negociacao => 
+                !this._negociacoes.paraArray()
+                .some(jaImportada => negociacao.ehIgual(jaImportada)))
+                .forEach(negociacao => this._negociacoes.adiciona(negociacao));
+        this._negociacoesView.update(this._negociacoes);
+    }     
 }
 
 
